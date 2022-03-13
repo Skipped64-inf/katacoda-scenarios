@@ -28,7 +28,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "code": "fireground.sh"
+      "code": "foreground.sh"
     },
     "finish": {
       "text": "finish.md"
