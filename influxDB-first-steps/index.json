@@ -2,32 +2,33 @@
   "title": "First steps for using InfluxDB for timeseries",
   "description": "This scenario shows all the first steps you need to take to install and use InfluxDB for timeseries",
   "difficulty": "Beginner",
-  "time": "60 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Introduction to InfluxDB",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Installing InfluxDB",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Configuring InfluxDB",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Importing a time series",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Working with InfluxDB",
         "text": "step5.md"
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "fireground.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -37,6 +38,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "python:3.8"
+    "imageid": "ubuntu:2004"
   }
 }

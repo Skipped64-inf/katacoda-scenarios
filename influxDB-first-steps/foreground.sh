@@ -1,0 +1,1 @@
+apt install -y figlet && clear && figlet -f slant "InfluxDB"
