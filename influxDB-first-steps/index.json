@@ -1,29 +1,25 @@
 {
-  "title": "First steps for using InfluxDB for timeseries",
+  "title": "First steps for using InfluxDB for time series",
   "description": "This scenario shows all the first steps you need to take to install and use InfluxDB for timeseries",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
       {
-        "title": "Introduction to InfluxDB",
+        "title": "Installing InfluxDB",
         "text": "step1.md"
       },
       {
-        "title": "Installing InfluxDB",
+        "title": "Configuring InfluxDB",
         "text": "step2.md"
       },
       {
-        "title": "Configuring InfluxDB",
+        "title": "Importing a time series",
         "text": "step3.md"
       },
       {
-        "title": "Importing a time series",
-        "text": "step4.md"
-      },
-      {
         "title": "Working with InfluxDB",
-        "text": "step5.md"
+        "text": "step4.md"
       }
     ],
     "intro": {
@@ -33,6 +29,14 @@
     "finish": {
       "text": "finish.md"
     }
+  },
+  "assets": {
+    "client": [
+      {
+        "file": "*",
+        "target": "~/"
+      }
+    ]
   },
   "environment": {
     "uilayout": "terminal"
