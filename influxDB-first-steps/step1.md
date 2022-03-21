@@ -4,5 +4,5 @@ This tutorial will focus on installing InfluxDB on ubuntu but you can also use t
 
 ## Downloading the binary files
 
-wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-linux-amd64.tar.gz {{execute}}
+`wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-linux-amd64.tar.gz`{{execute}}
 
