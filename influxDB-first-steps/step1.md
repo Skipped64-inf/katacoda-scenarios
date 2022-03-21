@@ -13,8 +13,7 @@ In this tutorial we will use version 2.1.1 but you can get a more recent one [he
  
 After downloading the binaries we will use the _tar_ tool to extract the files.
 
-`tar xvzf path/to/influxdb2-2.1.1-linux-amd64.tar.gz` {{execute}
-}
+`tar xvzf path/to/influxdb2-2.1.1-linux-amd64.tar.gz` {{execute}}
 
 ## 3. Starting the database
 
