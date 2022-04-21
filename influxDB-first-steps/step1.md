@@ -33,7 +33,7 @@ Though we got the database running, we still need a tool to input data into the 
 
 We will install telegraf on the hostmachine instead of a docker container, because our goal is to monitor system resources and fill them into the database.
 
-`wget -qO- https://repos.influxdata.com/influxdb.key | | sudo apt-key add - && source /etc/os-release && echo "deb https://repos.influxdata.com/${ID} ${VERSION_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list && sudo apt-get update && sudo apt-get install telegraf`{{execute}}
+`wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add - && source /etc/os-release && echo "deb https://repos.influxdata.com/${ID} ${VERSION_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list && sudo apt-get update && sudo apt-get install telegraf`{{execute}}
 
 This adds the corresponding repo to our ubuntu machine and installs telegraf. For an installation on other systems visit [the installation page](https://docs.influxdata.com/telegraf/v1.22/install/).
 
