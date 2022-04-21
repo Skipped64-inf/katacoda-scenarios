@@ -34,13 +34,23 @@
       "text": "finish.md"
     },
     "assets": {
-			"client": [
-				{ "file": "*", "target": "~/" }
-			]
-		}
+      "client": [
+        {
+          "file": "*",
+          "target": "~/"
+        }
+      ]
+    }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Display 8086",
+        "port": 80
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu:2004"
