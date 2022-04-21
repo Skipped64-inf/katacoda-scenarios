@@ -42,6 +42,12 @@ Though we got the database running, we still need a tool to input data into the 
 Telegraf needs a configuration file to match the influxdb credentials specified during installation. To make this scenario a little simpler i've already provided that configuration file. Let's take a look:
 `cat telegraf.conf`{{execute}}
 
+Token, organization and bucket need to be set as configured in the influxdb container.
+
+`docker run -d --name=telegraf -v /mytelegrafconfigsdir/telegraf.conf:/var/lib/influxdb --net=influxdb-telegraf-net telegraf`{{execute}}
+
+Finally, we can run the telegraf container.
+
 
 ## 3. Checking the installation
 
