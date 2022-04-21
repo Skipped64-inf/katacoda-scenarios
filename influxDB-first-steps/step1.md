@@ -12,7 +12,7 @@ In this tutorial we will use version 2.2 but you can get a more recent one [here
 
 Because we are using docker, we first need to create a docker network. Containers by default can not communicate with each other, unless they are in the same docker network.
 `docker network create --driver bridge influxdb-telegraf-net`{{execute}}
-## 3. Installing influxdb and telegraf
+## 3. Installing InfluxDB with docker
  
 `docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket --network influxdb-telegraf-net influxdb:2.2`{{execute}}
 
@@ -26,22 +26,25 @@ Let's take a look at what this command does:
 
 This will start the container and preconfigure our environment so we have the database ready and runnning.
 
+Now we can check if the container is running:
+`docker ps`{{execute}}
+
+In this case, the container is running and we can test if our database accepts connections.
+`curl localhost:8086`{{execute}}
+
+We send a simple webrequest to the assigned port from the docker run command and we can see that the database is infact running on that port and returns a valid response on request.
+
+## 4. Installing Telegraf with docker
+
 Though we got the database running, we still need a tool to input data into the database. The choice when working with influxdb is telegraf. 
 > Telegraf is a server-based agent for collecting and sending all metrics[...]. [[1]](https://www.influxdata.com/time-series-platform/telegraf/)
 
-Instead of running both containers separately, we can use a docker compose file to start both.
+Telegraf needs a configuration file to match the influxdb credentials specified during installation. To make this scenario a little simpler i've already provided that configuration file. Let's take a look:
+`cat telegraf.conf`{{execute}}
 
 
 ## 3. Checking the installation
 
-The first thing to do after running a docker container is to check if it is running:
-`docker ps`{{execute}}
-
-In this case, the container is running and we can test if our database accepts connections.
-
-`curl localhost:8086`{{execute}}
-
-We send a simple webrequest to the assigned port from the docker run command and we can see that the database is infact running on that port and returns a valid response on request.
 
 
 
