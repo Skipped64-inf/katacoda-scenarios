@@ -44,7 +44,7 @@ Telegraf needs a configuration file to match the influxdb credentials specified 
 
 Token, organization and bucket need to be set as configured in the influxdb container.
 
-`docker run -d --name=telegraf -v /root/telegraf.conf:/var/lib/influxdb --net=influxdb-telegraf-net telegraf`{{execute}}
+`docker run -d --name=telegraf -v /root/telegraf.conf:/etc/telegraf/telegraf.conf --net=influxdb-telegraf-net telegraf`{{execute}}
 
 Finally, we can run the telegraf container.
 
