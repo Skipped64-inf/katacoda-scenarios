@@ -14,7 +14,7 @@ Because we are using docker, we first need to create a docker network. Container
 `docker network create --driver bridge influxdb-telegraf-net`{{execute}}
 ## 3. Installing influxdb and telegraf
  
-`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket --network influxdb-telegraf-net influxdb:2.2`
+`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket --network influxdb-telegraf-net influxdb:2.2`{{execute}}
 
 Let's take a look at what this command does:
  - 'docker run -d' means starting a container in silent mode (runs in the background).
@@ -27,7 +27,7 @@ Let's take a look at what this command does:
 This will start the container and preconfigure our environment so we have the database ready and runnning.
 
 Though we got the database running, we still need a tool to input data into the database. The choice when working with influxdb is telegraf. 
-> Telegraf is a server-based agent for collecting and sending all metrics[...]. [1](https://www.influxdata.com/time-series-platform/telegraf/)
+> Telegraf is a server-based agent for collecting and sending all metrics[...]. [[1]](https://www.influxdata.com/time-series-platform/telegraf/)
 
 Instead of running both containers separately, we can use a docker compose file to start both.
 
