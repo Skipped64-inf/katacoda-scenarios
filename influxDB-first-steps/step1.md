@@ -26,36 +26,31 @@ Let's take a look at what this command does:
  - 'influxdb:2.2' specifies the image which docker should run the container from. In this case we want to set a version so it does not break any future deployments if the version changes. If the image is not available/pulled locally, it pulls the image from the docker hub.
 
 This will start the container and preconfigure our environment so we have the database ready and runnning.
-## 4. Installing Telegraf with docker
+## 4. Installing Telegraf
 
 Though we got the database running, we still need a tool to input data into the database. The choice when working with influxdb is telegraf. 
 > Telegraf is a server-based agent for collecting and sending all metrics[...]. [[1]](https://www.influxdata.com/time-series-platform/telegraf/)
 
-Telegraf needs a configuration file to match the influxdb credentials specified during installation. To make this scenario a little simpler i've already provided that configuration file. Let's take a look:
-`cat telegraf.conf`{{execute}}
+We will install telegraf on the hostmachine instead of a docker container, because our goal is to monitor system resources and fill them into the database.
 
-Token, organization and bucket need to be set as configured in the influxdb container.
+`wget -qO- https://repos.influxdata.com/influxdb.key | sudo tee /etc/apt trusted.gpg.d/influxdb.asc >/dev/null && source /etc/os-release && echo "deb https://repos.influxdata.com/${ID} ${VERSION_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list && sudo apt-get update && sudo apt-get install telegraf`{{execute}}
 
-`docker run -d --name=telegraf -v /root/telegraf.conf:/etc/telegraf/telegraf.conf --net=influxdb-telegraf-net telegraf`{{execute}}
-
-Finally, we can run the telegraf container.
-
+This adds the corresponding repo to our ubuntu machine and installs telegraf. For an installation on other systems visit [the installation page](https://docs.influxdata.com/telegraf/v1.22/install/).
 
 ## 3. Checking the installation
 
 To make sure the installation went through, run:
 `docker ps`{{execute}}
 
-This outputs all running docker containers, here our influxdb and telegraf containers.
+This outputs all running docker containers, here our influxdb container.
 
 You can now test if the database is indeed running by calling the command:
 `curl localhost:8086`{{execute}}
 which should return some html output.
 We send a simple webrequest to the assigned port from the docker run command and we can see that the database is infact running on that port and returns a valid response on request.
-Another way to check if there are any errors is by looking at
+Another way to check if there are any errors is by looking at:
 `docker logs influxdb`{{execute}}
-and
-`docker logs telegraf`{{execute}}.
+
 
 Alright, logs looking good. On to the fun part!
 
