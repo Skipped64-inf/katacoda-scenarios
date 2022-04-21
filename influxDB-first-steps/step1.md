@@ -1,5 +1,3 @@
-
-
 This tutorial will focus on installing InfluxDB on ubuntu but you can also use the [official InfluxDB docker image](https://hub.docker.com/_/influxdb/).
 
 ## 1. Figuring out which version to install

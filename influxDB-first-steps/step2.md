@@ -1,6 +1,6 @@
 Now hop over to the [InfluxDB UI](https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/) tab and login with the credentials we created earlier.
- - username: "admin"
- - password: "adminpassword"
+ - username: `admin`{{copy}}
+ - password: `adminpassword`{{copy}}
 
 You will be greeted by the _Getting Started_ screen. Here select "Load your data" to continue with the scenario.
 
@@ -12,5 +12,10 @@ The bucket, that was created while making the docker container, is already selec
 
 Leave everything as is and click "Create and Verify".
 
-Before finishing the configuration, two lines of code will be displayed. Copy the first line to clipboard and head back to the "Terminal" Tab.
+Before finishing the configuration, two lines of code will be displayed. Copy the first line to clipboard and paste it into the Terminal tab at the bottom. This sets our token so we are authorized to access the api with Telegraf.
 
+Finally copy the second line of code and also paste it into the terminal. This starts telegraf with a custom config file that we created by clicking through the UI at the top. 
+
+To check the connection press the "Listen for Data" Button in the UI and wait for it to recieve data (it sometimes takes a short time to register the connection).
+
+Click finish. This completes our configuration.
