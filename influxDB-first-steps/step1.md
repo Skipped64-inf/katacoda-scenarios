@@ -18,8 +18,16 @@ Let's take a look at what this command does:
  - the '-v ...' parameters set specific docker volumes for the container. InfluxDB needs these to work properly.
  - all parameters with '-e ...' are for preconfiguring the user. Specifically the DOCKER_INFLUXDB_INIT_USERNAME and DOCKER_INFLUXDB_INIT_PASSWORD are important to be able to connect to it later. 
  - 'influxdb:2.2' specifies the image which docker should run the container from. In this case we want to set a version so it does not break any future deployments if the version changes. If the image is not available/pulled locally, it pulls the image from the docker hub.
-## 3. Starting the database
+## 3. Checking the installation
 
+The first thing to do after running a docker container is to check if it is running:
+`docker ps`{{execute}}
+
+In this case, the container is running and we can test if our database accepts connections.
+
+`curl localhost:8086`{{execute}}
+
+We send a simple webrequest to the assigned port from the docker run command and we can see that the database is infact running on that port and returns a valid response on request.
 
 
 
