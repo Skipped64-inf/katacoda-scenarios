@@ -14,13 +14,13 @@ Because we are using docker, we first need to create a docker network. Container
 `docker network create --driver bridge influxdb-telegraf-net`{{execute}}
 ## 3. Installing InfluxDB with docker
  
-`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket --network influxdb-telegraf-net influxdb:2.2`{{execute}}
+`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket -e DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=mytoken -e INFLUXD_TLS_CERT=/etc/ssl/influxdb-selfsigned.crt INFLUXD_TLS_KEY=/etc/ssl/influxdb-selfsigned.key --network influxdb-telegraf-net influxdb:2.2`{{execute}}
 
 Let's take a look at what this command does:
  - 'docker run -d' means starting a container in silent mode (runs in the background).
  - the '-p 8086:8086' specifies the port mapping. Docker maps the port 8086 from inside the container to 8086 of localhost. The port on localhost can easily be swapped if already in use.
  - the '-v ...' parameters set specific docker volumes for the container. InfluxDB needs these to work properly.
- - all parameters with '-e ...' are for preconfiguring the user. Specifically the DOCKER_INFLUXDB_INIT_USERNAME and DOCKER_INFLUXDB_INIT_PASSWORD are important to be able to connect to it later. 
+ - all parameters with '-e ...' are for environment variables to preconfigure the credentials. We need these to access and push data to the database. Keep in mind these are not credentials you should use in production.
  - to be able to connect to telegraf, '--network influxdb-telegraf-net' adds the container to our network created in step 2.
  - 'influxdb:2.2' specifies the image which docker should run the container from. In this case we want to set a version so it does not break any future deployments if the version changes. If the image is not available/pulled locally, it pulls the image from the docker hub.
 
