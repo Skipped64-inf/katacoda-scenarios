@@ -14,7 +14,7 @@ Because we are using docker, we first need to create a docker network. Container
 `docker network create --driver bridge influxdb-telegraf-net`{{execute}}
 ## 3. Installing InfluxDB with docker
  
-`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket -e DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=mytoken12345token -e INFLUXD_TLS_CERT=/etc/ssl/influxdb-selfsigned.crt -e INFLUXD_TLS_KEY=/etc/ssl/influxdb-selfsigned.key --network influxdb-telegraf-net influxdb:2.2`{{execute}}
+`docker run -d -p 8086:8086 -v $PWD/data:/var/lib/influxdb2 -v $PWD/config:/etc/influxdb2 -e DOCKER_INFLUXDB_INIT_MODE=setup -e DOCKER_INFLUXDB_INIT_USERNAME=admin -e DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword -e DOCKER_INFLUXDB_INIT_ORG=DHBW -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket -e DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=mytoken12345token --network influxdb-telegraf-net influxdb:2.2`{{execute}}
 
 Let's take a look at what this command does:
  - 'docker run -d' means starting a container in silent mode (runs in the background).
