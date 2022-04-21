@@ -6,23 +6,23 @@
   "details": {
     "steps": [
       {
-        "title": "Introduction to InfluxDB",
+        "title": "Installing InfluxDB and Telegraf",
         "text": "step1.md"
       },
       {
-        "title": "Installing InfluxDB",
+        "title": "Configuring InfluxDB with Telegraf",
         "text": "step2.md"
       },
       {
-        "title": "Configuring InfluxDB",
+        "title": "Checking on our monitoring",
         "text": "step3.md"
       },
       {
-        "title": "Importing a timeseries",
+        "title": "Creating a dashboard",
         "text": "step4.md"
       },
       {
-        "title": "Working with InfluxDB",
+        "title": "Further steps",
         "text": "step5.md"
       }
     ],
