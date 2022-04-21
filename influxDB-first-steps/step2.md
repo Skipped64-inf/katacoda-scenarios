@@ -1,4 +1,4 @@
-Now hop over to the "InfluxDB UI" tab and login with the credentials we created earlier.
+Now hop over to the [InfluxDB UI](https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/) tab and login with the credentials we created earlier.
  - username: "admin"
  - password: "adminpassword"
 
@@ -11,4 +11,6 @@ For this scenario we will take a look at a prime example for using InfluxDB in a
 The bucket, that was created while making the docker container, is already selected. From the different options below, select "System" and press continue at the bottom.
 
 Leave everything as is and click "Create and Verify".
+
+Before finishing the configuration, two lines of code will be displayed. Copy the first line to clipboard and head back to the "Terminal" Tab.
 
