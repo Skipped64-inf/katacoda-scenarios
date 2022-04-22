@@ -1,14 +1,14 @@
 # InfluxDB
 In this scenario you'll learn how to install and use the open-source time series database InfluxDB.
 
-A time series database are based on Key-Value pairs where the key will be a timestamp. This is especially useful for usecases where you are monitoring data over time[[1]](https://github.com/influxdata/influxdb).
+InfluxDB is a NoSQL database and  based on Key-Value pairs where the key will be a timestamp. This is especially useful for usecases where you are monitoring data over time[[1]](https://github.com/influxdata/influxdb).
 This is what a table in a timeseries database could look like:
 
 ![Example Table](./assets/influxdb.png)
 
 [Andreas Buckenhofer,2022, Buckenhofer-DWH04-Tools, Slide 50](https://elearning.dhbw-stuttgart.de/moodle/pluginfile.php/452774/mod_resource/content/1/Buckenhofer-DWH04-Tools.pdf)
 
-Data is identified by the timestamp and contains all the data connected to the specific timestamp.
+Data is identified by the timestamp and contains all the values connected to that specific timestamp. Values are usually meassurements from hardware like sensors, servers, etc. 
 
 The scenario will first focus on the installation and setup of an instance of InfluxDB and telegraf.
 
