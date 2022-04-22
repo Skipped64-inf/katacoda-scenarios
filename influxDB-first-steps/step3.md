@@ -1,0 +1,1 @@
+With telegraf and influxdb fully configured, open the 

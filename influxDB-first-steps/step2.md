@@ -1,4 +1,4 @@
-Now hop over to the [InfluxDB UI](https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/) tab and login with the credentials we created earlier.
+Now look at the upper tab,  the [InfluxDB UI](https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/), and login with the credentials we created earlier.
  - username: `admin`{{copy}}
  - password: `adminpassword`{{copy}}
 
