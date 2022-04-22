@@ -6,7 +6,7 @@ This is what a table in a timeseries database could look like:
 
 ![Example Table](./assets/influxdb.png)
 
-[Andreas Buckenhofer,2022](https://elearning.dhbw-stuttgart.de/moodle/pluginfile.php/452774/mod_resource/content/1/Buckenhofer-DWH04-Tools.pdf)
+[Andreas Buckenhofer,2022, Buckenhofer-DWH04-Tools, Slide 50](https://elearning.dhbw-stuttgart.de/moodle/pluginfile.php/452774/mod_resource/content/1/Buckenhofer-DWH04-Tools.pdf)
 
 Data is identified by the timestamp and contains all the data connected to the specific timestamp.
 
