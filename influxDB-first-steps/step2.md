@@ -10,7 +10,8 @@ As you can see, there are many options for collecting data into the database. In
 ## 2. Using Telegraf as datasource
 For this scenario we will take a look at a prime example for using InfluxDB in a system monitoring usecase. To implement such a data collection, head over to the *Telegraf* tab at the top and press *create Configuration*.
 
-The bucket, that was created while making the docker container, is already selected. From the different options below, select "System" and press *Continue* at the bottom.
+The bucket, that was created while making the docker container, is already selected. From the different options below, select *System* and press *Continue* at the bottom.
+Here one could use many many different plugins and languages to collect and push data into the database. To make things easy to setup, we will just use the system resources, which are ofcourse ready and available to be monitored.
 
 For the plugin config, leave everything as is and click *Create and Verify*.
 
