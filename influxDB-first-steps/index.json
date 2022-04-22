@@ -1,8 +1,8 @@
 {
   "title": "InfluxDB: First Steps",
   "description": "This scenario shows all the first steps you need to take to install and use InfluxDB for timeseries",
-  "difficulty": "Beginner",
-  "time": "10 minutes",
+  "difficulty": "Experts",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
