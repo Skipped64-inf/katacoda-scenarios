@@ -11,5 +11,7 @@ This is what a table in a timeseries database could look like:
 Data is identified by the timestamp and contains all the data connected to the specific timestamp.
 
 The scenario will first focus on the installation and setup of an instance of InfluxDB and telegraf.
+
 >  Telegraf is a server-based agent for collecting and sending all metrics and events from databases, systems, and IoT sensors. [[2]](https://www.influxdata.com/time-series-platform/telegraf/). 
+
 After the setup is complete, you will learn how to integrate basic system monitoring with telegraf into the database. While exploring the possibilites you will learn why this makes sense and what usecases can profit from the time based design.
