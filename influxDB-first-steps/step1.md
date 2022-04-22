@@ -6,6 +6,7 @@ For an easy and fast deployment process, we will use docker to install an instan
 
 In this tutorial we will use version 2.2 but you can get a more recent one [here](https://hub.docker.com/_/influxdb/).
 
+For Telegraf we will use version 1.22, the latest current version. Find more over at the official [Github](https://github.com/influxdata/telegraf).
 
 ## 2. Installing InfluxDB with docker
  
@@ -23,7 +24,6 @@ This will start the container and preconfigure our environment so we have the da
 ## 3. Installing Telegraf
 
 Though we got the database running, we still need a tool to input data into the database. The choice when working with influxdb is telegraf. 
-> Telegraf is a server-based agent for collecting and sending all metrics[...]. [[1]](https://www.influxdata.com/time-series-platform/telegraf/)
 
 We will install telegraf on the hostmachine instead of a docker container, because our goal is to monitor system resources and fill them into the database.
 
